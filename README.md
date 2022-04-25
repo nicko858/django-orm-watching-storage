@@ -14,28 +14,20 @@ Python3 should be already installed.
   $ python3 -m venv ./venv
   $ . ./venv/bin/activate
   ```
-
-- Fill your database params in the `project/settings.py`
-
-    ```bash
-    DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'HOST': '',
-        'PORT': '',
-        'NAME': '',
-        'USER': '',
-        'PASSWORD': '',
-        }
-      }
-    ```
-- Run the program
-
+- Create and fill `.env`-file in the project root directory:  
+```bash
+   DB_HOST=checkpoint.devman.org
+   DB_PORT=<database port>
+   DB_NAME=<database name>
+   DB_USER=<database user>
+   DB_PASSWORD=<database password>
+   DEBUG=false
+```
 
 ## How to run
 
   ```bash
-      $ python main.py
+      $ python manage.py runserver
   ```
 
 ## Project Goals
