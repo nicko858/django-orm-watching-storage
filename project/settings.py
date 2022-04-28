@@ -1,6 +1,10 @@
 import os
 from dotenv import load_dotenv
 from distutils.util import strtobool
+from environs import Env
+
+env = Env()
+env.read_env()
 
 
 load_dotenv()
@@ -18,13 +22,13 @@ DATABASES = {
 
 INSTALLED_APPS = ['datacenter']
 
-SECRET_KEY = 'REPLACE_ME'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = strtobool(os.getenv('DEBUG'))
 
 ROOT_URLCONF = 'project.urls'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", ['localhost', '127.0.0.1'])
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
