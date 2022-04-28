@@ -22,6 +22,7 @@ Python3 should be already installed.
    DB_USER=<database user>
    DB_PASSWORD=<database password>
    DEBUG=false
+   SECRET_KEY=<your secret key>
 ```
 
 ## How to run
